@@ -1,9 +1,8 @@
-import React from "react";
 import { FaShoppingCart } from "react-icons/fa";
 
-function Card({ store }) {
+function Card({ store, handleCart }) {
   return (
-    <div className=" rounded-xl gap-6 h-[300px] border shadow-xl flex flex-col justify-center items-center">
+    <div className=" justify-items-end rounded-xl gap-6 h-[400px] border shadow-xl flex flex-col justify-center items-center">
       <div>
         <img className="w-[200px]" src={store.img} alt="" />
       </div>
@@ -12,7 +11,7 @@ function Card({ store }) {
         <div className=" flex gap-5 items-center">
           <p className="line-through">${store.prevPrice}</p>
           <p>${store.newPrice}</p>
-          <FaShoppingCart />
+          <FaShoppingCart onClick={() => handleCart(store)} />
         </div>
       </div>
     </div>
